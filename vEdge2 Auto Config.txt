@@ -1,0 +1,84 @@
+system
+ host-name               vEdge2
+ gps-location latitude 6.606578
+ gps-location longitude 36.362752
+ system-ip               2.2.2.2
+ site-id                 2
+ admin-tech-on-failure
+ no route-consistency-check
+ organization-name       ether-net
+ clock timezone Africa/Algiers
+ vbond 10.10.1.3
+ aaa
+  auth-order local radius tacacs
+  usergroup basic
+   task system read write
+   task interface read write
+  !
+  usergroup netadmin
+  !
+  usergroup operator
+   task system read
+   task interface read
+   task policy read
+   task routing read
+   task security read
+  !
+  usergroup tenantadmin
+  !
+  user admin
+   password $6$VU45AaRjEF4UMCoG$mO1eqdmgGK/gUqcQUBSyE8vsil.f1iCb9BRcxHRqVh5Q.cROJChQPk1KDJNd9JptZmp4/LIARWIrXh6/88uug.
+  !
+ !
+ logging
+  disk
+   enable
+  !
+ !
+ no cft-enable
+ no cft-cache-enable
+ no anchor-wan-tunnel-pkts
+!
+omp
+ no shutdown
+ graceful-restart
+ advertise connected
+ advertise static
+!
+security
+ ipsec
+  authentication-type ah-sha1-hmac sha1-hmac
+ !
+!
+vpn 0
+ interface ge0/0
+  ip address 172.19.0.22/16
+  ipv6 dhcp-client
+  tunnel-interface
+   encapsulation ipsec
+   allow-service all
+   no allow-service bgp
+   allow-service dhcp
+   allow-service dns
+   allow-service icmp
+   allow-service sshd
+   allow-service netconf
+   no allow-service ntp
+   no allow-service ospf
+   no allow-service stun
+   allow-service https
+  !
+  no shutdown
+ !
+ interface ge0/1
+  ip address 172.18.0.31/16
+  no shutdown
+ !
+ ip route 0.0.0.0/0 172.19.0.1
+!
+vpn 512
+ interface eth0
+  ip dhcp-client
+  no shutdown
+ !
+!

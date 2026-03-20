@@ -1,0 +1,68 @@
+system
+ host-name             vManage
+ gps-location latitude 3.153752
+ gps-location longitude 36.724293
+ system-ip             1.1.1.1
+ site-id               1000
+ admin-tech-on-failure
+ sp-organization-name  ether-net
+ organization-name     ether-net
+ clock timezone Africa/Algiers
+ vbond 10.10.1.3
+ aaa
+  auth-order local radius tacacs
+  usergroup basic
+   task system read write
+   task interface read write
+  !
+  usergroup netadmin
+  !
+  usergroup operator
+   task system read
+   task interface read
+   task policy read
+   task routing read
+   task security read
+  !
+  usergroup tenantadmin
+  !
+  user admin
+   password $6$i83Lw67iTMDjnO98$fPrYhxJwaI4Ektkw.nTA8KiN31H0TF4HJFgJWxJwHTgvgP096GNaA4kkKIvBDIups6ztG2SJmzDp2AIQ9cVK11
+  !
+ !
+ logging
+  disk
+   enable
+  !
+ !
+ no cft-enable
+ no cft-cache-enable
+!
+vpn 0
+ interface eth1
+  ip address 10.10.1.1/24
+  tunnel-interface
+   allow-service all
+   allow-service dhcp
+   allow-service dns
+   allow-service icmp
+   allow-service sshd
+   allow-service netconf
+   no allow-service ntp
+   no allow-service stun
+   allow-service https
+  !
+  no shutdown
+ !
+ interface eth2
+  ip dhcp-client
+  no shutdown
+ !
+ ip route 0.0.0.0/0 10.10.1.254
+!
+vpn 512
+ interface eth0
+  ip address 172.16.1.1/24
+  no shutdown
+ !
+!

@@ -1,0 +1,80 @@
+system
+ host-name               vBond
+ gps-location latitude 3.153752
+ gps-location longitude 36.724293
+ system-ip               1.1.1.3
+ site-id                 1000
+ admin-tech-on-failure
+ no route-consistency-check
+ organization-name       ether-net
+ clock timezone Africa/Algiers
+ vbond 10.10.1.3 local
+ aaa
+  auth-order local radius tacacs
+  usergroup basic
+   task system read write
+   task interface read write
+  !
+  usergroup netadmin
+  !
+  usergroup operator
+   task system read
+   task interface read
+   task policy read
+   task routing read
+   task security read
+  !
+  usergroup tenantadmin
+  !
+  user admin
+   password $6$riJbOmbjlljq6Q2v$J6P36ho/19/Z4cousJzqjPaeCbqmken/Y57vP7EnKRy3eHSiQNdcudsM1jhs8cIst/CEILHrSxgiBwwZZs2CM.
+  !
+ !
+ logging
+  disk
+   enable
+  !
+ !
+ no cft-enable
+ no cft-cache-enable
+ no anchor-wan-tunnel-pkts
+!
+omp
+ no shutdown
+ graceful-restart
+ advertise connected
+ advertise static
+!
+security
+ ipsec
+  authentication-type ah-sha1-hmac sha1-hmac
+ !
+!
+vpn 0
+ interface ge0/0
+  ip address 10.10.1.3/24
+  ipv6 dhcp-client
+  tunnel-interface
+   encapsulation ipsec
+   allow-service all
+   no allow-service bgp
+   allow-service dhcp
+   allow-service dns
+   allow-service icmp
+   allow-service sshd
+   allow-service netconf
+   no allow-service ntp
+   no allow-service ospf
+   no allow-service stun
+   allow-service https
+  !
+  no shutdown
+ !
+ ip route 0.0.0.0/0 10.10.1.254
+!
+vpn 512
+ interface eth0
+  ip address 172.16.1.3/24
+  no shutdown
+ !
+!
