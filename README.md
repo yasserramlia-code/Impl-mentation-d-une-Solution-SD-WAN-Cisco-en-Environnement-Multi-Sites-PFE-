@@ -7,7 +7,7 @@
 4. [🛠️ Stack Technique et Outils](#️-stack-technique-et-outils)
 5. [⚙️ Implémentation et Fonctionnalités Clés](#️-implémentation-et-fonctionnalités-clés)
 6. [🚧 Défis Techniques & Limites de l'Environnement](#-défis-techniques--limites-de-lenvironnement)
-7. [📂 Structure de ce Dépôt](#-structure-de-ce-dépôt)
+7. [VMs)
 
 ---
 ## 👤 Auteur
@@ -63,7 +63,9 @@ La mise en œuvre de cette infrastructure SD-WAN émulée a mis en évidence plu
 
 ---
 
-## 📂 Structure de ce Dépôt
-* 📁 `docs/` : Rapport de mémoire complet (PDF) et schémas d'architecture.
-* 📁 `topology/` : Fichiers d'exportation de la topologie GNS3.
-* 📁 `configs/` : Fichiers de configuration initiale (Startup-config) des contrôleurs et routeurs vEdge.
+---
+
+## 📦 Téléchargement des Machines Virtuelles
+Pour les personnes souhaitant reproduire ce laboratoire sans avoir à provisionner les équipements depuis zéro, les images des machines virtuelles (vManage, vSmart, vBond, vEdge) préconfigurées sont disponibles en téléchargement direct :
+
+🔗 **[Cliquez ici pour accéder au dossier de téléchargement (Mega.nz)](https://mega.nz/folder/I7By3CwC#p3P3vRsXwueJvflDNeR6uQ)**
