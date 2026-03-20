@@ -42,6 +42,14 @@ L'environnement de laboratoire reproduit une infrastructure d'entreprise réalis
 4. **Validation et Troubleshooting :**
    * Tests de connectivité ICMP et applicatifs de bout en bout.
    * Capture de trames avec Wireshark pour valider le chiffrement des tunnels de contrôle (DTLSv1.2) et de données (IPSec).
+     
+---  
+
+## 🚧 Défis Techniques & Limites de l'Environnement
+La mise en œuvre de cette infrastructure SD-WAN émulée a mis en évidence plusieurs défis techniques majeurs, principalement liés aux exigences de la solution Cisco :
+* **Goulots d'étranglement matériels :** Les orchestrateurs Cisco (notamment vManage) exigent énormément de ressources (RAM/CPU). Le déploiement initial sur des machines standards (32 Go de RAM) s'est avéré insuffisant pour supporter la charge combinée du plan de contrôle et des multiples routeurs virtuels.
+* **Instabilité de la topologie (Flapping) :** En raison de l'épuisement des ressources du serveur (CPU Starvation), les routeurs virtuels peinaient à traiter les paquets de maintien de session (BFD - Bidirectional Forwarding Detection) dans les temps impartis. Cela provoquait des déconnexions intempestives des tunnels IPSec, avec des sites distants basculant continuellement entre les états "Up" et "Down".
+* **Périmètre du projet :** La solution Cisco Catalyst SD-WAN étant extrêmement vaste, certaines fonctionnalités avancées n'ont pas pu être exploitées dans le temps imparti pour ce laboratoire. Des éléments comme l'intégration multi-cloud (Cisco Cloud OnRamp), l'analyse prédictive (vAnalytics) ou l'inspection profonde des paquets (DPI) à grande échelle sont restés hors périmètre.
 
 ---
 
