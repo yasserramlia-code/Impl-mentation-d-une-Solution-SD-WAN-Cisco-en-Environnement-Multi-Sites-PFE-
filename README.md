@@ -1,5 +1,15 @@
 # 🚀 Déploiement d'une Architecture Cisco Catalyst SD-WAN pour Entreprise (PFE)
 
+## 📑 Sommaire
+1. [👤 Auteur](#-auteur)
+2. [📝 Contexte du Projet](#-contexte-du-projet)
+3. [🏗️ Topologie et Architecture Multi-Sites](#️-topologie-et-architecture-multi-sites)
+4. [🛠️ Stack Technique et Outils](#️-stack-technique-et-outils)
+5. [⚙️ Implémentation et Fonctionnalités Clés](#️-implémentation-et-fonctionnalités-clés)
+6. [🚧 Défis Techniques & Limites de l'Environnement](#-défis-techniques--limites-de-lenvironnement)
+7. [📂 Structure de ce Dépôt](#-structure-de-ce-dépôt)
+
+---
 ## 👤 Auteur
 **Yasser RAMLIA** * Ingénieur d'État en Télécommunications et Réseaux IP (ENSTTIC)
 * Master 1 Cybersécurité, Cloud et Réseaux (Sorbonne Université)
