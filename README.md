@@ -24,7 +24,7 @@ L'objectif de ce projet était de concevoir, déployer et sécuriser une archite
 ---
 
 ## 🏗️ Topologie et Architecture Multi-Sites
-L'environnement de laboratoire reproduit une infrastructure d'entreprise réaliste à l'échelle nationale (Algérie) :
+L'environnement de simulation reproduit une infrastructure d'entreprise réaliste à l'échelle nationale (Algérie) :
 * 🏢 **Site de Contrôle (Headquarters) :** Alger (Hébergement des contrôleurs vManage, vBond, vSmart).
 * 🏬 **Sites Distants (Branches) :** Oran, Constantine, Sétif et Tlemcen (Routeurs vEdge).
 
@@ -59,12 +59,12 @@ L'environnement de laboratoire reproduit une infrastructure d'entreprise réalis
 La mise en œuvre de cette infrastructure SD-WAN émulée a mis en évidence plusieurs défis techniques majeurs, principalement liés aux exigences de la solution Cisco :
 * **Goulots d'étranglement matériels :** Les orchestrateurs Cisco (notamment vManage) exigent énormément de ressources (RAM/CPU). Le déploiement initial sur des machines standards (32 Go de RAM) s'est avéré insuffisant pour supporter la charge combinée du plan de contrôle et des multiples routeurs virtuels.
 * **Instabilité de la topologie (Flapping) :** En raison de l'épuisement des ressources du serveur (CPU Starvation), les routeurs virtuels peinaient à traiter les paquets de maintien de session (BFD - Bidirectional Forwarding Detection) dans les temps impartis. Cela provoquait des déconnexions intempestives des tunnels IPSec, avec des sites distants basculant continuellement entre les états "Up" et "Down".
-* **Périmètre du projet :** La solution Cisco Catalyst SD-WAN étant extrêmement vaste, certaines fonctionnalités avancées n'ont pas pu être exploitées dans le temps imparti pour ce laboratoire. Des éléments comme l'intégration multi-cloud (Cisco Cloud OnRamp), l'analyse prédictive (vAnalytics) ou l'inspection profonde des paquets (DPI) à grande échelle sont restés hors périmètre.
+* **Périmètre du projet :** La solution Cisco Catalyst SD-WAN étant extrêmement vaste, certaines fonctionnalités avancées n'ont pas pu être exploitées dans le temps imparti pour ce lab. Des éléments comme l'intégration multi-cloud (Cisco Cloud OnRamp), l'analyse prédictive (vAnalytics) ou l'inspection profonde des paquets (DPI) à grande échelle sont restés hors périmètre.
 
 ---
 
 ## 📦 Téléchargement des Machines Virtuelles
-Pour les personnes souhaitant reproduire ce laboratoire sans avoir à provisionner les équipements depuis zéro, les images des machines virtuelles (vManage, vSmart, vBond, vEdge) préconfigurées sont disponibles en téléchargement direct :
+Pour les personnes souhaitant reproduire ce Environnement de simulation sans avoir à provisionner les équipements depuis zéro, les images des machines virtuelles (vManage, vSmart, vBond, vEdge) préconfigurées sont disponibles en téléchargement direct :
 
 🔗 **[Cliquez ici pour accéder au dossier de téléchargement (Mega.nz)](https://mega.nz/folder/I7By3CwC#p3P3vRsXwueJvflDNeR6uQ)**
 
