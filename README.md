@@ -18,7 +18,7 @@ L'environnement de laboratoire reproduit une infrastructure d'entreprise réalis
 * 🏢 **Site de Contrôle (Headquarters) :** Alger (Hébergement des contrôleurs vManage, vBond, vSmart).
 * 🏬 **Sites Distants (Branches) :** Oran, Constantine, Sétif et Tlemcen (Routeurs vEdge).
 
-> **Note sur le Hardware :** Face aux fortes exigences matérielles des orchestrateurs Cisco, ce lab a été déployé sur un serveur dédié haute performance fourni par l'ENSTTIC.
+> **Note sur le Hardware :** Face aux fortes exigences matérielles des orchestrateurs Cisco, ce lab a été déployé sur un serveur dédié haute performance fourni par l'école.
 
 ---
 
